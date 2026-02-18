@@ -1,11 +1,12 @@
 package com.task.managemnt.system.service;
 
+import com.task.managemnt.system.DTO.CheckDto;
 import com.task.managemnt.system.DTO.TaskDto;
 
-import java.util.Optional;
+public interface Servicecreation {
 
-public interface servicecreation {
+    CheckDto Register(TaskDto taskDto);
 
-    TaskDto Register(TaskDto taskDto);
+
 
 }

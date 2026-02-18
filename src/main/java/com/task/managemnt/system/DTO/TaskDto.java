@@ -10,11 +10,11 @@ import java.util.Date;
 @Builder
 @Setter
 @Getter
-@RequiredArgsConstructor
 @AllArgsConstructor
 @NoArgsConstructor
 public class TaskDto {
 
+    private Long t_id;
     private String title;
     private String Description;
     private Date duedate;
