@@ -51,5 +51,19 @@ public class Serviceimplementation implements Servicecreation {
 
     }
 
+    @Override
+    public Taskentity Update(TaskDto taskDto) {
+
+        Taskentity present =
+                taskRepository.findByTitle(taskDto.getTitle())
+                        .orElseThrow(() ->
+                                new TaskException("The task by this title is not found"));
+
+        present.setPriority(taskDto.getPriority());
+        present.setStatus(taskDto.getStatus());
+
+        return taskRepository.save(present);
+    }
+
 
 }
