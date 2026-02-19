@@ -13,5 +13,5 @@ public interface TaskRepository extends JpaRepository<Taskentity,Long> {
     Optional<Taskentity> findByTitle(String title);
 
 
-    Taskentity deleteTask(Long tId);
+
 }
