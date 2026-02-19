@@ -17,7 +17,7 @@ public class Taskentity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long T_Id;
+    private Long t_Id;
     private String title;
     private String Description;
     private Date duedate;

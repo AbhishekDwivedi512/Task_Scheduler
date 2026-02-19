@@ -30,7 +30,7 @@ public class Serviceimplementation implements Servicecreation {
         }
 
         Taskentity taskentity = Taskentity.builder()
-                .T_Id(taskDto.getT_id())
+                .t_Id(taskDto.getT_Id())
                 .title(taskDto.getTitle())
                 .Description(taskDto.getDescription())
                 .duedate(taskDto.getDuedate())
@@ -41,7 +41,7 @@ public class Serviceimplementation implements Servicecreation {
         Taskentity taskentitysave = (Taskentity) taskRepository.save(taskentity);
 
             return CheckDto.builder()
-                    .t_id(taskDto.getT_id())
+                    .t_Id(taskDto.getT_Id())
                     .title(taskDto.getTitle())
                     .priority(taskDto.getPriority())
                     .Description(taskDto.getDescription())
@@ -51,19 +51,18 @@ public class Serviceimplementation implements Servicecreation {
 
     }
 
-    @Override
-    public Taskentity Update(TaskDto taskDto) {
+    public Taskentity Update(Long id, TaskDto taskDto) {
 
-        Taskentity present =
-                taskRepository.findByTitle(taskDto.getTitle())
-                        .orElseThrow(() ->
-                                new TaskException("The task by this title is not found"));
+        Taskentity task = taskRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Task not found"));
 
-        present.setPriority(taskDto.getPriority());
-        present.setStatus(taskDto.getStatus());
+        task.setTitle(taskDto.getTitle());
+        task.setDescription(taskDto.getDescription());
+        task.setStatus(taskDto.getStatus());
 
-        return taskRepository.save(present);
+        return taskRepository.save(task);
     }
-
-
 }
+
+
+

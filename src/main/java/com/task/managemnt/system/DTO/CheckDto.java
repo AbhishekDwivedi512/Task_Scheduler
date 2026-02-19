@@ -13,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CheckDto {
-    private Long t_id;
+    private Long t_Id;
     private String title;
     private Priority priority;
     private String Description;

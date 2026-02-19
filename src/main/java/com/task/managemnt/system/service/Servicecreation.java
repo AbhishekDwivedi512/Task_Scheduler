@@ -8,7 +8,7 @@ public interface Servicecreation {
 
     CheckDto Register(TaskDto taskDto);
 
-    Taskentity Update(TaskDto taskDto);
+    Taskentity Update(Long t_Id,TaskDto taskDto);
 
 
 }
