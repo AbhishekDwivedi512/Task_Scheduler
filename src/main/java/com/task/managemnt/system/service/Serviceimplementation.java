@@ -62,6 +62,16 @@ public class Serviceimplementation implements Servicecreation {
 
         return taskRepository.save(task);
     }
+
+    @Override
+    public Taskentity delete(Long t_Id) {
+        Taskentity task = taskRepository.findById(t_Id)
+                .orElseThrow(() -> new RuntimeException("Task not found"));
+
+        taskRepository.deleteTask(task);
+
+        return task;
+    }
 }
 
 

@@ -10,5 +10,7 @@ public interface Servicecreation {
 
     Taskentity Update(Long t_Id,TaskDto taskDto);
 
+    Taskentity delete(Long t_Id);
+
 
 }

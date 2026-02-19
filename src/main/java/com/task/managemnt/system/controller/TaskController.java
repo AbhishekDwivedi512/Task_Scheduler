@@ -30,6 +30,14 @@ public class TaskController {
         return servicecreation.Update(t_Id, taskDto);
     }
 
+    @DeleteMapping("/task/delete/{id}")
+
+    public Taskentity deleteById(@PathVariable("id") Long t_Id){
+
+       return servicecreation.delete(t_Id);
+    }
+
+
 
 
 
